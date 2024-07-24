@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-
+import Provider from "../components/Providers"
 
 
 
@@ -22,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Provider>
         <Navbar />
-          <div className="container h-full pt-12 ">
-          {children}
-          </div>        
+           <div className="container h-full pt-12 ">
+            {children}
+             </div>        
+          </Provider>
         </body>
     </html>
   );

@@ -39,6 +39,7 @@ const BlogDetailPage: FC<BlogDetailPageProps> = async ({params}) => {
         <p className='text-slate-700'>{post?.content }</p>
     </div>
   )
+
 }
 
 export default BlogDetailPage

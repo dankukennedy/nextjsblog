@@ -18,10 +18,10 @@ model Tag {
   name String @db.VarChar(100)
   Post Post[]
 }
-
+ 
 model Post {
   id        String   @id @default(cuid())
-  title     String   @db.VarChar(100)
+  title     String   @db.VarChar(255)
   content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

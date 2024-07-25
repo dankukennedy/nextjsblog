@@ -43,7 +43,7 @@ interface FormPostProps {
             <span className="loading loading-bars loading-lg"></span>
        </div>
         :
-        <select {...register('tag',{required: true})} className='select select-bordered w-full max-w-lg'
+        <select {...register('tagId',{required: true})} className='select select-bordered w-full max-w-lg'
             defaultValue={''}
          >
             <option disabled selected value=''>

@@ -7,7 +7,7 @@ import React,{FC} from 'react'
 interface BlogDetailPageProps{
   params:{
    id:string,
-  } 
+  }
 }
 
 async function getPost(id:string){
@@ -39,7 +39,6 @@ const BlogDetailPage: FC<BlogDetailPageProps> = async ({params}) => {
         <p className='text-slate-700'>{post?.content }</p>
     </div>
   )
-
 }
 
 export default BlogDetailPage

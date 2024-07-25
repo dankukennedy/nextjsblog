@@ -21,7 +21,9 @@ const PostCard:FC <PostCardProps> = ({post}) => {
       <p>{content}</p>
       <div className="card-actions justify-end">
         <span className='badge badge-neutral'>{tag.name}</span>
-       <Link href={`/blog/${id}`} className='hover:underline'>Read More....</Link>
+       <Link href={`/blog/${id}`} className='hover:underline'>
+         Read More....
+       </Link>
       </div>
      </div>
    </div>

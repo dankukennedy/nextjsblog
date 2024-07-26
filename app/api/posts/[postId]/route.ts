@@ -43,7 +43,6 @@ export async function PATCH(req: Request, context:contextProps){
     }
 } 
 
-
 export async function GET(req: Request, context:contextProps){ 
     try{
         const { params } = context;

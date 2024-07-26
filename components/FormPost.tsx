@@ -11,9 +11,11 @@ interface FormPostProps {
     submit: SubmitHandler<FormInputPost>;
     isEditing: boolean;
     initialValue?: FormInputPost;
+    isLoadingSubmit : boolean;
+    
 }
 
- const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue}) => {
+ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue,isLoadingSubmit}) => {
     const{ register, handleSubmit } = useForm<FormInputPost>( {
       defaultValues: initialValue,
    } );
@@ -26,7 +28,7 @@ interface FormPostProps {
          return response.data;
       }
     })
-    console.log(dataTags); 
+    //console.log(dataTags); 
 
   return (
      <form 
@@ -49,20 +51,28 @@ interface FormPostProps {
         <select {...register('tagId',{required: true})} className='select select-bordered w-full max-w-lg'
             defaultValue={''}
          >
-            <option disabled selected value=''>
+            <option disabled  value=''>
                 Select Tags
-            </option> 
-            {dataTags?.map(item =>(
-               <option key={item.id} value={item.id}> {item.name}</option>
+            </option>
+            {dataTags?.map((item )=>(
+               <option key={item.id} value={item.id}> {item.name}
+               </option>
             ))}
 
       </select>}
-        
         <button type='submit' className='btn btn-primary w-full max-w-lg'>
-       {isEditing ? 'Update': 'Create'}
+         {isLoadingSubmit && <span className='loading loading-spinner'></span>}
+          {isEditing 
+           ?isLoadingSubmit 
+           ? 'Updating..'
+            :'Update'
+            :isLoadingSubmit
+            ?'Creating...'
+            :'Create'
+           }
          </button>
      </form>
   )
 }
-
+ 
 export default FormPost;

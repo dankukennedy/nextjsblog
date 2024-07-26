@@ -51,7 +51,8 @@ export async function GET(req: Request, context:contextProps){
           const post = await db.post.findFirst({
             where:{
                 id:params.postId
-            },  include:{
+            },
+            include:{
                 tag:true
             }
           });

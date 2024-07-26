@@ -22,6 +22,7 @@ export async function DELETE(req: Request, context:contextProps){
     }
 }
 
+// Updating Data
 export async function PATCH(req: Request, context:contextProps){
     try{
   const { params } = context;

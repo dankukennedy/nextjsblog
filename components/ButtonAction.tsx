@@ -11,13 +11,13 @@ interface ButtonActionProps{
   id:string
 }
 
-const ButtonAction:FC<ButtonActionProps> = ({id}) => { 
+const ButtonAction:FC<ButtonActionProps> = ({id}) => {
 const router = useRouter();
 
 const { mutate: deletePost, isLoading} = useMutation({
   mutationFn: async() =>{
        return axios.delete(`/api/posts/${id}`);
-  }, 
+  },
    onError: (error)=>{
     console.error(error);;
   } ,

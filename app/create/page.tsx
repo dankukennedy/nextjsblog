@@ -31,9 +31,9 @@ const {mutate: createPost, isLoading:isLoadingSubmit }  = useMutation({
     <div>
       <BackButton />
         <h1 className='text-2xl my04 font-bold text-center'>Add New Post</h1>
-         <FormPost  
-         submit={handleCreatePost}  
-         isEditing={false} 
+         <FormPost
+         submit={handleCreatePost}
+         isEditing={false}
          isLoadingSubmit={isLoadingSubmit}
          />
     </div>

@@ -20,7 +20,7 @@ export async function DELETE(req: Request, context:contextProps){
     }catch(error){
         return NextResponse.json({message:'could not delete the post'},{status:500})
     }
-} 
+}
 
 export async function PATCH(req: Request, context:contextProps){
     try{
@@ -30,7 +30,7 @@ export async function PATCH(req: Request, context:contextProps){
          await db.post.update({
             where:{
                 id:params.postId,
-            }, 
+            },
             data:{
                   title:body.title,
                   content:body.content,
@@ -41,9 +41,9 @@ export async function PATCH(req: Request, context:contextProps){
     }catch(error){
         return NextResponse.json({message:'could not update post'},{status:500})
     }
-} 
+}
 
-export async function GET(req: Request, context:contextProps){ 
+export async function GET(req: Request, context:contextProps){
     try{
         const { params } = context;
           const post = await db.post.findFirst({
@@ -57,4 +57,4 @@ export async function GET(req: Request, context:contextProps){
     }catch(error){
         return NextResponse.json({message:'could not fetch tags'},{status:500})
     }
-} 
+}

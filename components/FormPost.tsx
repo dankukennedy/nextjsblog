@@ -9,11 +9,14 @@ import { Tag } from '@prisma/client';
  
 interface FormPostProps {
     submit: SubmitHandler<FormInputPost>;
-    isEditing: boolean
+    isEditing: boolean;
+    initialValue?: FormInputPost;
 }
 
- const FormPost: FC<FormPostProps> = ({submit, isEditing}) => {
-    const{ register, handleSubmit } = useForm<FormPostProps>();
+ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue}) => {
+    const{ register, handleSubmit } = useForm<FormInputPost>( {
+      defaultValues: initialValue,
+   } );
 
     // fetch list tags
     const {data:dataTags, isLoading: isLoadingTag} = useQuery<Tag[]>({

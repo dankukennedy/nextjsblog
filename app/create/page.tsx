@@ -13,8 +13,8 @@ const CreatePage = () => {
 const handleCreatePost: SubmitHandler<FormInputPost> = (data) =>{
   createPost(data)
 }
-
-const {mutate: createPost, isLoading}  = useMutation({
+ 
+const {mutate: createPost, isLoading }  = useMutation({
   mutationFn: (newPost:FormInputPost) => {
     return axios.post('api/posts/create', newPost)
   }, 

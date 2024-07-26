@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container">
         <div className="flex-1">
           <Link href="/">
-            {" "}
+            {""}
             <BookOpenCheck color="blue" />
           </Link>
         </div>

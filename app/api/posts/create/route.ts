@@ -16,4 +16,4 @@ export async function POST(req: Request){
     }catch(error){
         return NextResponse.json({message:'could not create post'},{status:500})
     }
-} 
+}

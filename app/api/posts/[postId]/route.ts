@@ -8,6 +8,7 @@ interface contextProps{
       }
 }
 
+// Deleting Data
 export async function DELETE(req: Request, context:contextProps){
     try{
   const { params} = context;
@@ -15,7 +16,7 @@ export async function DELETE(req: Request, context:contextProps){
             where:{
                 id: params.postId
             }
-          }); 
+          });
              return new Response(null,{status:204})
     }catch(error){
         return NextResponse.json({message:'could not delete the post'},{status:500})
